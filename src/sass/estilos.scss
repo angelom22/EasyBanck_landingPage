@@ -1,0 +1,113 @@
+@import "./header.scss";
+@import "./hero.scss";
+@import "./menu.scss";
+@import "./why.scss";
+@import "./latesArticles.scss";
+@import "./footer.scss";
+
+:root {
+  // Primary
+  --DarkBlue: hsl(233, 26%, 24%);
+  --LimeGreen: hsl(136, 65%, 51%);
+  --BrightCyan: hsl(192, 70%, 51%);
+
+  // Neutral
+  --grayBlue: hsl(233, 8%, 62%);
+  --gray: hsl(220, 16%, 96%);
+  --lightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --wrapperSpace: 1.5em;
+
+  font-size: 16px;
+}
+
+body {
+  // border: 10px solid red;
+  font-family: "Public Sans", sans-serif;
+  margin: 0px;
+  color: var(--grayBlue);
+}
+
+.copy {
+  // border: 1px solid red;
+  line-height: 1.7em;
+  font-size: 0.9em;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.wrapper {
+  padding: 0 var(--wrapperSpace);
+}
+
+@mixin title {
+  font-size: 2.5em;
+  color: var(--DarkBlue);
+  font-weight: 300;
+  line-height: 1.3em;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  // border: 1px solid red;
+  &__h1 {
+    @include title;
+  }
+  &__h2 {
+    @include title;
+    // border: 1px solid red;
+    font-size: 1.5em;
+  }
+  &__h3 {
+    @include title;
+    font-size: 1em;
+  }
+}
+
+.button {
+  // border: 1px solid blue;
+  border: none;
+  padding: 0.9em 2.2em;
+  border-radius: 1.5em;
+  color: var(--white);
+  font-size: 1em;
+  background-image: linear-gradient(
+    to right,
+    var(--LimeGreen) 0%,
+    var(--BrightCyan) 100%
+  );
+}
+
+@mixin icon {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  &__facebook {
+    @include icon;
+    background: url("../images/icon-facebook.svg") no-repeat;
+  }
+  &__youtube {
+    @include icon;
+    background: url("../images/icon-youtube.svg") no-repeat;
+  }
+  &__twitter {
+    @include icon;
+    background: url("../images/icon-twitter.svg") no-repeat;
+  }
+  &__pinterest {
+    @include icon;
+    background: url("../images/icon-pinterest.svg") no-repeat;
+  }
+  &__instagram {
+    @include icon;
+    background: url("../images/icon-instagram.svg") no-repeat;
+  }
+}
